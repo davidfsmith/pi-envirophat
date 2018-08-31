@@ -18,7 +18,7 @@ Dumps the data from the EnvironPhat into a DyanmoDB table (needs to be created f
 	aws_access_key_id = access_key_id
 	aws_secret_access_key = aws_secret_access_key
 	
-The `profile-name` needs to be set in line 33 of the code (and change the region for personal preference)
+The `profile-name` needs to be set in `.env` file as well as the `region` and `table` name.
 
 Running the code requires the following values:
 
