@@ -18,12 +18,16 @@ Dumps the data from the EnvironPhat into a DyanmoDB table (needs to be created f
 	aws_access_key_id = access_key_id
 	aws_secret_access_key = aws_secret_access_key
 	
-The `profile-name` needs to be set in `.env` file as well as the `region` and `table` name.
+The `profile-name` needs to be set in `.env` file as well as the `region` and `table` name, also update the device UUID in the code to a different random UUID
 
 Running the code requires the following values:
 
 * `--account` made up account number / string
 * `--location` location of the recording device
+
+### Cron example
+
+	*/5 * * * * cd /<location> && ./enviro-dynamodb.py --account <made up account name> --location <made up locatio>
 
 Tested and working on a [Pi Zero WH](https://shop.pimoroni.com/products/raspberry-pi-zero-wh-with-pre-soldered-header) and [Pi 3 B+](https://shop.pimoroni.com/products/raspberry-pi-3-b-plus)
 
