@@ -13,6 +13,9 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 DEBUG = os.getenv('DEBUG', None)
+PROFILE = os.getenv('PROFILE', 'default')
+REGION = os.getenv('REGION', 'eu-west-1')
+TABLE = os.getenv('TABLE', 'Careline')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--account',
@@ -30,12 +33,12 @@ acc = str(motion.accelerometer())[1:-1].replace(' ', '')
 
 device_uuid = 'f9d84855-aa86-4f9d-b773-effc1029f700'
 
-session = boto3.Session(profile_name='PROFILE',
-                        region_name='eu-west-1')
+session = boto3.Session(profile_name=PROFILE,
+                        region_name=REGION)
 client = session.client('dynamodb')
 
 r = client.put_item(
-    TableName='Careline',
+    TableName=TABLE,
     Item={
         'device_uuid': {'S': device_uuid},
         'timestamp': {'S': datetime.now().isoformat()},
