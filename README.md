@@ -33,5 +33,5 @@ Tested and working on a [Pi Zero WH](https://shop.pimoroni.com/products/raspberr
 
 ### Todo
 
-1. Use env to set profile name / region and table name
-2. 	If response != 200 when logging the data to DyanmoDB do something with it (log file?)
+1. ~~Use env to set profile name / region and table name~~
+2. If response != 200 when logging the data to DyanmoDB do something with it (log file?)
